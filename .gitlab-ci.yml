@@ -1,0 +1,17 @@
+image: java:8
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script: ./gradlew build
+  artifacts:
+    paths:
+      - build/libs/shop-0.0.1-SNAPSHOT.jar
+
+test:
+  stage: test
+  script:
+    - ./gradlew test
